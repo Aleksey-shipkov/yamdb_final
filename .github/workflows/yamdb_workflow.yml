@@ -41,6 +41,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2 
+        context: ./api_yamdb/
         with:
           push: true
           tags: shipkov1234/api_yamdb:v3.11.2022
