@@ -1,10 +1,9 @@
-from django.db import models
-from django.db.models import UniqueConstraint
 from django.contrib.auth.models import AbstractUser
-from django.db.models import Avg
+from django.db import models
+from django.db.models import Avg, UniqueConstraint
+from reviews.validators import validate_rating, validate_year
 
 from api_yamdb.settings import MY_PROFILE_URL_PATH
-from reviews.validators import validate_year, validate_rating
 
 
 class User(AbstractUser):

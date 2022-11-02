@@ -1,9 +1,9 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from django.shortcuts import get_object_or_404
-from api_yamdb.settings import MY_PROFILE_URL_PATH
+from reviews.models import Categories, Comments, Genres, Review, Title, User
 
-from reviews.models import Categories, Genres, Title, Review, Comments, User
+from api_yamdb.settings import MY_PROFILE_URL_PATH
 
 
 class UserSerializer(serializers.ModelSerializer):

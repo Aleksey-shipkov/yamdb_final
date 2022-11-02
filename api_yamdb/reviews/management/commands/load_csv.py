@@ -1,9 +1,9 @@
-from django.core.management.base import BaseCommand
 import csv
-from django.shortcuts import get_object_or_404
-from reviews.models import (
-    Title, Categories, Genres, GenreTitle, Review, Comments, User)
 
+from django.core.management.base import BaseCommand
+from django.shortcuts import get_object_or_404
+from reviews.models import (Categories, Comments, Genres, GenreTitle, Review,
+                            Title, User)
 
 PATH_TO_UPLOAD = 'static/data/'
 

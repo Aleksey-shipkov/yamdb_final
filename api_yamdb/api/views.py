@@ -1,27 +1,21 @@
+from api.filters import TitleFilter
+from api.permissions import (IsAdmin, IsAdminModeratorOwnerOrReadOnly,
+                             IsAdminOrReadOnly)
+from api.serializers import (CategoriesSerializer, CommentSerializer,
+                             GenresSerializer, RegisterDataSerializer,
+                             ReviewSerializer, TitleSerializer,
+                             TokenSerializer, UserEditSerializer,
+                             UserSerializer)
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-
 from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-
-from reviews.models import Categories, Genres, Title, Review, User
-from api.filters import TitleFilter
-from api.permissions import (IsAdmin, IsAdminOrReadOnly,
-                             IsAdminModeratorOwnerOrReadOnly)
-from api.serializers import (CategoriesSerializer,
-                             GenresSerializer,
-                             TitleSerializer,
-                             ReviewSerializer,
-                             CommentSerializer,
-                             RegisterDataSerializer,
-                             TokenSerializer,
-                             UserEditSerializer,
-                             UserSerializer)
+from reviews.models import Categories, Genres, Review, Title, User
 
 from api_yamdb.settings import MY_PROFILE_URL_PATH
 
