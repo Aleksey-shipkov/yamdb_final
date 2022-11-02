@@ -44,7 +44,7 @@ jobs:
         with:
           push: true
           context: ./api_yamdb/
-          tags: shipkov1234/api_yamdb:v3.11.2022
+          tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
   
   deploy:
     runs-on: ubuntu-latest
@@ -58,6 +58,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
             sudo docker compose stop
             sudo docker compose rm web
             touch .env
