@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: shipkov1234/api_yamdb:latest
+          tags: shipkov1234/api_yamdb:v3.11.2022
   
   deploy:
     runs-on: ubuntu-latest
