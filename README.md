@@ -109,7 +109,7 @@ GET - запрос
 > POSTGRES_USER=postgres
 
 ### Пароль для подключения к БД (установите свой)
-POSTGRES_PASSWORD=12345678
+> POSTGRES_PASSWORD=12345678
 
 ### Название сервиса (контейнера)
 > DB_HOST=db
