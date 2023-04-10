@@ -125,7 +125,9 @@ POSTGRES_PASSWORD=12345678
 
 ### Теперь в контейнере web нужно выполнить миграции, создать суперпользователя и собрать статику:
 > docker-compose exec web python manage.py migrate
+
 > docker-compose exec web python manage.py createsuperuser
+
 > docker-compose exec web python manage.py collectstatic --no-input 
 
 ### Что бы проверить его работу перейдите по ссылке:
@@ -136,4 +138,5 @@ POSTGRES_PASSWORD=12345678
 
 ### Для заполнения базы данных используйте следующие команды:
 > sudo docker-compose exec web python manage.py makemigrations reviews 
+
 > sudo docker-compose exec web python manage.py migrate
